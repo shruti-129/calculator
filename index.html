@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>|calculator|</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculator">
+    <div class="container">
+        <div class="contain">
+            <form id="resetvalue">
+                <div class="input">
+                    <div class="data">
+                        1st Data:-<input type="number" id="dataA" placeholder="enter a">
+                    </div>
+                    <div class="data">
+                        2nd Data:-<input type="number" id="dataB" placeholder="enter b">
+                    </div>
+                </div>
+                <div class="select">
+                    <input type="radio" id="add" name="select" value="Addition">Addition<br>
+                    <input type="radio" id="sub" name="select" value="Substraction">Substraction<br>
+                    <input type="radio" id="mul" name="select" value="Multiplication">Multiplication<br>
+                    <input type="radio" id="div" name="select" value="Division">Division<br>
+                </div>
+                <div class="submitbutton">
+                    <input type="button" id="button" value="Submit Your Data">
+                </div>
+            </form>
+            <div class="displaydata">
+                <table style="width:50%">
+                    <tr>
+                        <th>1st Data</th>
+                        <th>2nd Data</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td id="value1"></td>
+                        <td id="value2"></td>
+                        <td id="value3"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+      var no1,no2,result;
+        $("#add").on('click',function(){
+          Add();
+        });
+        $("#sub").on('click',function(){
+          Substract();
+        });
+        $("#mul").on('click',function(){
+          Multiply();
+        });
+        $("#div").on('click',function(){
+          Divide();
+        });
+      function Add(){
+        var no1=parseInt($("#dataA").val());
+        var no2=parseInt($("#dataB").val());
+        var result =no1+no2;
+        $("#button").click(function () {
+          $(".contain>.displaydata").show();
+          $("#value1").text(+no1);
+          $("#value2").text(+no2);
+          $("#value3").text(+result);
+          $("#resetvalue").trigger("reset");
+        });
+      }
+      function Substract(){
+        var no1=parseInt($("#dataA").val());
+        var no2=parseInt($("#dataB").val());
+        var result =no1-no2;
+        $("#button").click(function () {
+          $(".contain>.displaydata").show();
+          $("#value1").text(+no1);
+          $("#value2").text(+no2);
+          $("#value3").text(+result);
+          $("#resetvalue").trigger("reset");
+        });
+      }
+      function Multiply(){
+        var no1=parseInt($("#dataA").val());
+        var no2=parseInt($("#dataB").val());
+        var result =no1*no2;
+        $("#button").click(function () {
+          $(".contain>.displaydata").show();
+          $("#value1").text(+no1);
+          $("#value2").text(+no2);
+          $("#value3").text(+result);
+          $("#resetvalue").trigger("reset");
+        });
+      }
+      function Divide(){
+        var no1=parseInt($("#dataA").val());
+        var no2=parseInt($("#dataB").val());
+        var result =no1/no2;
+        $("#button").click(function () {
+          $(".contain>.displaydata").show();
+          $("#value1").text(+no1);
+          $("#value2").text(+no2);
+          $("#value3").text(+result);
+          $("#resetvalue").trigger("reset");
+        });
+      }
+    });
+</script>
+</body>
+</html>
